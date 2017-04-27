@@ -5,20 +5,28 @@
  * Date: 2017/4/26
  * Time: 下午1:18
  */
-function connectDatabase()
+$mysql_server = 'localhost';
+$mysql_port = '3306';
+$mysql_username = 'root';
+$mysql_password = 'sizhaizhenexin';
+$mysql_database = 'graduate';
+
+class DB
 {
-    $mysql_server = 'localhost';
-    $mysql_port = '3306';
-    $mysql_username = 'root';
-    $mysql_password = '233';
-    $mysql_database = 'graduate';
+    function connectDatabase()
+    {
+        global $mysql_server, $mysql_port, $mysql_username, $mysql_password, $mysql_database;
 
-    $conn = mysqli_connect($mysql_server, $mysql_username, $mysql_password, $mysql_database, $mysql_port);
+        $conn = mysqli_connect($mysql_server, $mysql_username, $mysql_password, $mysql_database, $mysql_port);
+        mysqli_select_db($conn, $mysql_database);
+        mysqli_autocommit($conn, true);
+    }
 
-    return $conn;
-}
+    function select($sql)
+    {
+        global $conn;
+        $result = mysqli_query($conn, $sql);
 
-function select($conn, $sql)
-{
-
+        return $result;
+    }
 }
