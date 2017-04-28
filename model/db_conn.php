@@ -12,6 +12,10 @@ $mysql_password = 'sizhaizhenexin';
 $mysql_database = 'graduate';
 $conn = mysqli_connect($mysql_server, $mysql_username, $mysql_password, $mysql_database, $mysql_port);;
 
+echo json_encode(array(
+    'connect' => $conn,
+));
+
 class DB
 {
     function connectDatabase()
@@ -26,6 +30,10 @@ class DB
     {
         global $conn;
         $result = mysqli_query($conn, $sql);
+
+        echo json_encode(array(
+            'result' => $result,
+        ));
 
         return $result;
     }

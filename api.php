@@ -23,13 +23,13 @@ $db->connectDatabase();
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $path = $_SERVER['QUERY_STRING'];
     $request_arr = explode('&', $path);
-    $method_arr = explode('=', $request_arr[1]);
-    switch ($method_arr[2]) {
+    $method_arr = explode('=', $request_arr[0]);
+    switch ($method_arr[1]) {
         case "course":
             break;
         case "user":
             $user = new User();
-            echo json_encode($user->index($request_arr[2]));
+            echo json_encode($user->index($request_arr[1]));
             break;
         case "score":
             break;

@@ -15,10 +15,10 @@ $profile = new Profile();
 Class User{
     function index($request_params){
         $result = array(
-            'code' => 200,
+            'code' => 404,
         );
         $method = explode('=', $request_params);
-        switch ($method[2]){
+        switch ($method[1]){
             case "login":
                 break;
             case "profile":
