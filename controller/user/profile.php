@@ -18,6 +18,8 @@ class Profile{
 
         $data = $db->select($sql);
 
+        $result = '233';
+
         while($row = mysqli_fetch_row($data)){
             $result = $row;
         }
