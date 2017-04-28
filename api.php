@@ -21,9 +21,10 @@ $db = new DB();
 $db->connectDatabase();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $path = $_SERVER['PATH_INFO'];
-    $request_arr = explode('/', $path);
-    switch ($request_arr[1]) {
+    $path = $_SERVER['QUERY_STRING'];
+    $request_arr = explode('&', $path);
+    $method_arr = explode('=', $request_arr[1]);
+    switch ($method_arr[2]) {
         case "course":
             break;
         case "user":

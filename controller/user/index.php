@@ -17,7 +17,8 @@ Class User{
         $result = array(
             'code' => 200,
         );
-        switch ($request_params){
+        $method = explode('=', $request_params);
+        switch ($method[2]){
             case "login":
                 break;
             case "profile":
