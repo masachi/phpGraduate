@@ -22,6 +22,7 @@ RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC64107
 # Install nginx
 RUN apt-get install --no-install-recommends --no-install-suggests -q -y \
                         nginx=${NGINX_VERSION}
+RUN sed -i 's/user  nginx/user  www-data/g' /etc/nginx/nginx.conf
 # Override nginx's default config
 RUN rm -rf /etc/nginx/conf.d/default.conf
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
