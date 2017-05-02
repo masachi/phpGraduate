@@ -5,8 +5,10 @@
  * Date: 2017/4/26
  * Time: 下午1:18
  */
-$mysql_server = 'localhost';
-$mysql_port = '3306';
+//$mysql_server = 'localhost';
+$mysql_server = '153.125.238.237';
+//$mysql_port = '3306';
+$mysql_port = '31341';
 $mysql_username = 'root';
 $mysql_password = 'sizhaizhenexin';
 $mysql_database = 'graduate';
