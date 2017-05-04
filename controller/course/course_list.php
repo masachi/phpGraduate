@@ -2,18 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: Masachi
- * Date: 2017/4/26
- * Time: 下午1:23
+ * Date: 2017/5/2
+ * Time: 下午2:23
  */
 
 require_once '../../model/db_conn.php';
 
-class Profile
-{
-
-    function getProfile()
-    {
+class CourseList{
+    function getCourseList(){
         $number = $_POST['username'];
+        $date = $_POST['date'];
 
         $result = array(
             'code' => 200,
@@ -21,21 +19,21 @@ class Profile
             'data' => [],
         );
 
-        $sql = "select * from profile where number = {$number}";
         $db = new DB();
+
+        $sql = "select * from course where number = {$number} AND date = '{$date}'";
 
         $data = $db->select($sql);
 
         $i = 0;
 
-        while ($row = mysql_fetch_row($data)) {
+        while($row = mysql_fetch_row($data)){
+
             $result['data'][$i] = array(
-                'number' => $row[1],
-                'name' => $row[2],
-                'avatar' => $row[3],
-                'academy' => $row[4],
-                'faculty' => $row[5],
-                'class' => $row[6]
+                'week' => $row[4],
+                'course' => $row[5],
+                'teacher' => $row[6],
+                'info' => $row[7]
             );
             $i++;
         }

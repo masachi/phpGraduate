@@ -2,17 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: Masachi
- * Date: 2017/4/26
- * Time: 下午1:23
+ * Date: 2017/5/4
+ * Time: 下午4:23
  */
 
 require_once '../../model/db_conn.php';
 
-class Profile
-{
-
-    function getProfile()
-    {
+class ScoreList{
+    function getScoreList(){
         $number = $_POST['username'];
 
         $result = array(
@@ -21,21 +18,19 @@ class Profile
             'data' => [],
         );
 
-        $sql = "select * from profile where number = {$number}";
+        $sql = "select * from score where number = {$number}";
+
         $db = new DB();
 
         $data = $db->select($sql);
 
         $i = 0;
 
-        while ($row = mysql_fetch_row($data)) {
+        while($row = mysql_fetch_row($data)){
             $result['data'][$i] = array(
-                'number' => $row[1],
-                'name' => $row[2],
-                'avatar' => $row[3],
-                'academy' => $row[4],
-                'faculty' => $row[5],
-                'class' => $row[6]
+               'course' => $row[2],
+                'grade' => $row[3],
+                'score' => $row[4]
             );
             $i++;
         }

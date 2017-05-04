@@ -25,6 +25,8 @@ Class User{
                 global $profile;
                 return $profile->getProfile();
                 break;
+            default:
+                break;
         }
 
         return $result;
