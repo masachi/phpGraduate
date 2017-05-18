@@ -6,7 +6,7 @@
  * Time: 下午1:18
  */
 //$mysql_server = 'localhost';
-$mysql_server = '153.125.238.237:31341';
+$mysql_server = '153.125.235.241:31424';
 //$mysql_port = '3306';
 $mysql_port = '31341';
 $mysql_username = 'root';
@@ -28,10 +28,6 @@ class DB
     {
         global $conn;
         $result = mysql_query($sql);
-
-        echo json_encode(array(
-            'result' => $result,
-        ));
 
         return $result;
     }
