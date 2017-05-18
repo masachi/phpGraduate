@@ -29,6 +29,10 @@ class DB
         global $conn;
         $result = mysql_query($sql);
 
+        echo json_encode(array(
+            'result' => $result,
+        ));
+
         return $result;
     }
 }
