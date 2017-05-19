@@ -19,7 +19,7 @@ class ExamList{
             'data' => []
         );
 
-        $sql = "select * from exam where number = {$number} AND date = '{$date}'";
+        $sql = "select * from exam where number = {$number} and date = '{$date}'";
 
         $db = new DB();
 

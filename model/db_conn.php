@@ -6,9 +6,8 @@
  * Time: 下午1:18
  */
 //$mysql_server = 'localhost';
-$mysql_server = '153.125.235.241:31424/graduate?useUnicode=true&characterEncoding=utf8';
+$mysql_server = '182.254.152.66:3306/graduate?useUnicode=true&characterEncoding=utf8';
 //$mysql_port = '3306';
-$mysql_port = '31341';
 $mysql_username = 'root';
 $mysql_password = 'sizhaizhenexin';
 $mysql_database = 'graduate';
