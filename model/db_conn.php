@@ -6,7 +6,7 @@
  * Time: 下午1:18
  */
 //$mysql_server = 'localhost';
-$mysql_server = '153.125.235.241:31424';
+$mysql_server = '153.125.235.241:31424/graduate?useUnicode=true&characterEncoding=utf8';
 //$mysql_port = '3306';
 $mysql_port = '31341';
 $mysql_username = 'root';
@@ -14,12 +14,12 @@ $mysql_password = 'sizhaizhenexin';
 $mysql_database = 'graduate';
 $conn = mysql_connect($mysql_server, $mysql_username, $mysql_password);
 
-
 class DB
 {
     function connectDatabase()
     {
         global $conn, $mysql_database;
+        mysql_query("set character set 'utf8'");//读库
 
         mysql_select_db($mysql_database);
     }
@@ -29,9 +29,6 @@ class DB
         global $conn;
         $result = mysql_query($sql);
 
-        echo json_encode(array(
-            'result' => $result,
-        ));
 
         return $result;
     }

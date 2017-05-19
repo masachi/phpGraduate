@@ -30,10 +30,12 @@ class CourseList{
         while($row = mysql_fetch_row($data)){
 
             $result['data'][$i] = array(
-                'week' => $row[4],
-                'course' => $row[5],
-                'teacher' => $row[6],
-                'info' => $row[7]
+                'number' => urlencode ($row[1]),
+                'date' => urlencode ($row[2]),
+                'num' => urlencode ($row[3]),
+                'course' => urlencode ($row[6]),
+                'teacher' => urlencode ($row[7]),
+                'location' => urlencode ($row[8])
             );
             $i++;
         }

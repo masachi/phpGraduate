@@ -30,12 +30,12 @@ class Profile
 
         while ($row = mysql_fetch_row($data)) {
             $result['data'][$i] = array(
-                'number' => $row[1],
-                'name' => $row[2],
-                'avatar' => $row[3],
-                'academy' => $row[4],
-                'faculty' => $row[5],
-                'class' => $row[6]
+                'number' => urlencode ($row[1]),
+                'name' => urlencode ($row[2]),
+                'avatar' => urlencode ($row[3]),
+                'academy' => urlencode ($row[4]),
+                'faculty' => urlencode ($row[5]),
+                'class' => urlencode ($row[6])
             );
             $i++;
         }

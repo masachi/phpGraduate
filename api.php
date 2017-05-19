@@ -29,23 +29,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     switch ($method_arr[1]) {
         case "course":
             $course = new Course();
-            echo json_encode($course->index($request_arr[1]));
+            echo urldecode (json_encode($course->index($request_arr[1])));
             break;
         case "user":
             $user = new User();
-            echo json_encode($user->index($request_arr[1]));
+            echo urldecode (json_encode($user->index($request_arr[1])));
             break;
         case "score":
             $score = new Score();
-            echo json_encode($score->index($request_arr[1]));
+            echo urldecode (json_encode($score->index($request_arr[1])));
             break;
         case "notification":
             $notification = new Notification();
-            echo json_encode($notification->index($request_arr[1]));
+            echo urldecode (json_encode($notification->index($request_arr[1])));
             break;
         case "calendar":
             $calendar = new ExamList();
-            echo json_encode($calendar->getExamDate());
+            echo urldecode (json_encode($calendar->getExamDate()));
             break;
         default:
             echo json_encode(array(

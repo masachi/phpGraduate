@@ -26,9 +26,9 @@ class NotificationList{
         $i = 0;
         while($row = mysql_fetch_row($data)){
             $result['data'][$i] = array(
-                'title' => $row[1],
-                'url' => $row[2],
-                'date' => $row[3]
+                'title' => urlencode ($row[1]),
+                'url' => urlencode ($row[2]),
+                'date' => urlencode ($row[3])
             );
         }
 
