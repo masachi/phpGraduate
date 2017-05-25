@@ -18,7 +18,7 @@ class ScoreList{
             'data' => [],
         );
 
-        $sql = "select * from score where number = {$number}";
+        $sql = "select * from score where number = {$number} order by id desc";
 
         $db = new DB();
 
