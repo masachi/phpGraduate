@@ -29,6 +29,7 @@ class ExamList{
 
         while($row = mysql_fetch_row($data)){
             $result['data'][$i] = array(
+                'id' => urlencode($row[0]),
                 'date' => urlencode ($row[2]),
                 'course' => urlencode ($row[3]),
                 'time' => urlencode ($row[4]),

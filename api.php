@@ -44,8 +44,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo urldecode (json_encode($notification->index($request_arr[1])));
             break;
         case "calendar":
-            $calendar = new ExamList();
-            echo urldecode (json_encode($calendar->getExamDate()));
+            $calendar = new Calendar();
+            echo urldecode (json_encode($calendar->index($request_arr[1])));
             break;
         default:
             echo json_encode(array(

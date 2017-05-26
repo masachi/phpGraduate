@@ -28,6 +28,7 @@ class ScoreList{
 
         while($row = mysql_fetch_row($data)){
             $result['data'][$i] = array(
+                'id' => urlencode($row[0]),
                 'year' => urlencode ($row[2]),
                 'term' => urlencode ($row[3]),
                 'course' => urlencode ($row[4]),
