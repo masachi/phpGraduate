@@ -8,10 +8,11 @@
 
 require_once '../../model/db_conn.php';
 
+
 class CourseInfo{
     function getCourseInfo(){
         $number = $_POST['username'];
-        $course = $_POST['course'];
+        $course = json_decode('"'.$_POST['course'].'"');
 
         $result = array(
             'code' => 200,
@@ -20,6 +21,8 @@ class CourseInfo{
         );
 
         $db = new DB();
+
+
 
         $sql = "select * from course_info where number = {$number} AND course = '{$course}'";
 
