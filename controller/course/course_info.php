@@ -22,9 +22,11 @@ class CourseInfo{
 
         $db = new DB();
 
-
+        mysql_query("SET names UTF8");
 
         $sql = "select * from course_info where number = {$number} AND course = '{$course}'";
+
+        echo $sql;
 
         $data = $db->select($sql);
 
