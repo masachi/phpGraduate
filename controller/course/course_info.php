@@ -26,8 +26,6 @@ class CourseInfo{
 
         $sql = "select * from course_info where number = {$number} AND course = '{$course}'";
 
-        echo $sql;
-
         $data = $db->select($sql);
 
         $i = 0;
