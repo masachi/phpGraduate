@@ -18,7 +18,7 @@ class Comments{
 
         mysql_query("SET names UTF8");
 
-        $sql = "update course set comments = '{$comments}' where number = {$number} and course = '{$course}' and date = '{$date}';";
+        $sql = "update course set comments = '{$comments}', timeoff = 1 where number = {$number} and course = '{$course}' and date = '{$date}';";
 
 
 
