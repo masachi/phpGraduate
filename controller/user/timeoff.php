@@ -18,9 +18,11 @@ class Timeoff{
         mysql_query("SET names UTF8");
 
         $sql = "insert into timeoff (number, date, course, type, text) values ('{$number}', '{$date}', '{$course}', '{$type}', '{$timeoff}');";
+        $sql2 = "update course set timeoff = 1 where number = {$number} and course = '{$course}' and date = '{$date}';";
         $result = $db->insert($sql);
+        $result2 = $db->update($sql2);
 
-        if($result > 0){
+        if($result > 0 && $result2 > 0){
             $result = array(
                 'code' => 200,
                 'message' => 'success',
