@@ -10,6 +10,11 @@ chdir(dirname(__FILE__));
 
 require './profile.php';
 
+chdir(dirname(__FILE__));
+
+require './timeoff.php';
+
+$timeoff = new Timeoff();
 $profile = new Profile();
 
 Class User{
@@ -24,6 +29,10 @@ Class User{
             case "profile":
                 global $profile;
                 return $profile->getProfile();
+                break;
+            case "timeoff":
+                global $timeoff;
+                return $timeoff->addTimeOff();
                 break;
             default:
                 break;

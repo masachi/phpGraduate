@@ -14,9 +14,15 @@ chdir(dirname(__FILE__));
 
 require './course_info.php';
 
+chdir(dirname(__FILE__));
+
+require './comments.php';
+
 $course_list = new CourseList();
 
 $course_info = new CourseInfo();
+
+$comments = new Comments();
 
 class Course
 {
@@ -34,6 +40,10 @@ class Course
             case "course_info":
                 global $course_info;
                 return $course_info->getCourseInfo();
+                break;
+            case "comments":
+                global $comments;
+                return $comments->updateComments();
                 break;
             default:
                 break;

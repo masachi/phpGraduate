@@ -28,6 +28,20 @@ class DB
         global $conn;
         $result = mysql_query($sql);
 
+        return $result;
+    }
+
+    function update($sql){
+        global $conn;
+        $result = mysql_query($sql);
+
+        return $result;
+    }
+
+    function insert($sql){
+        global $conn;
+
+        $result = mysql_query($sql);
 
         return $result;
     }
