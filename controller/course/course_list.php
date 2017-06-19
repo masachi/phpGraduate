@@ -37,7 +37,8 @@ class CourseList{
                 'course' => urlencode ($row[6]),
                 'teacher' => urlencode ($row[7]),
                 'location' => urlencode ($row[8]),
-                'comments' => urlencode ($row[9])
+                'comments' => urlencode ($row[9]),
+                'timeoff' => urlencode ($row[10])
             );
             $i++;
         }
