@@ -14,8 +14,13 @@ chdir(dirname(__FILE__));
 
 require './timeoff.php';
 
+chdir(dirname(__FILE__));
+
+require './device.php';
+
 $timeoff = new Timeoff();
 $profile = new Profile();
+$device = new Device();
 
 Class User{
     function index($request_params){
@@ -33,6 +38,10 @@ Class User{
             case "timeoff":
                 global $timeoff;
                 return $timeoff->addTimeOff();
+                break;
+            case "device":
+                global $device;
+                return $device->insertDevice();
                 break;
             default:
                 break;
