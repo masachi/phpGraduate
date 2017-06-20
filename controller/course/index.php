@@ -20,7 +20,7 @@ require './comments.php';
 
 chdir(dirname(__FILE__));
 
-require './push.php';
+require './NotificationPush.php';
 
 $course_list = new CourseList();
 

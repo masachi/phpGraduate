@@ -5,7 +5,9 @@
  * Date: 2017/6/20
  * Time: 下午12:50
  */
-require('pushy.php');
+chdir(dirname(__FILE__));
+require './pushy.php';
+chdir(dirname(__FILE__));
 require_once '../../model/db_conn.php';
 
 class NotificationPush{
@@ -20,11 +22,11 @@ class NotificationPush{
 
         $sql = "select * from device where number = {$number};";
 
-        $data = $db->select($sql);
+        $date = $db->select($sql);
 
         $token = '';
 
-        while($row = mysql_fetch_row($data)){
+        while($row = mysql_fetch_row($date)){
             $token = $row[2];
         }
 
