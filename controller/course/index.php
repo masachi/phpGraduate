@@ -18,11 +18,17 @@ chdir(dirname(__FILE__));
 
 require './comments.php';
 
+chdir(dirname(__FILE__));
+
+require './push.php';
+
 $course_list = new CourseList();
 
 $course_info = new CourseInfo();
 
 $comments = new Comments();
+
+$push = new NotificationPush();
 
 class Course
 {
@@ -44,6 +50,15 @@ class Course
             case "comments":
                 global $comments;
                 return $comments->updateComments();
+                break;
+            case "push":
+                global $push;
+                $push->push();
+                return $result = array(
+                    'code' => 200,
+                    'message' => 'success',
+                    'data' => [],
+                );
                 break;
             default:
                 break;
